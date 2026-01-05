@@ -1,0 +1,157 @@
+/* =====================================================
+   ENTREGADOS – CONTENIDO CENTRAL
+===================================================== */
+
+.entregados {
+    background: #f4f6f8;
+}
+
+/* ================= HERO ================= */
+
+.entregados-hero {
+    background: #0066B3;
+    padding: 90px 20px;
+}
+
+.entregados-hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.entregados-hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.entregados-hero p {
+    font-size: 18px;
+    max-width: 700px;
+    color: #ffffff;
+    opacity: .95;
+}
+
+/* ================= LISTADO ================= */
+
+.entregados-lista {
+    padding: 80px 20px;
+}
+
+.entregados-lista .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* ================= CARD ================= */
+
+.entregado-card {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,102,179,.15);
+
+    /* animación */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp .8s ease forwards;
+}
+
+.entregado-card:nth-child(2) { animation-delay: .15s; }
+.entregado-card:nth-child(3) { animation-delay: .3s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= IMAGEN ================= */
+
+.entregado-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.entregado-card:hover img {
+    transform: scale(1.08);
+}
+
+/* ================= INFO ================= */
+
+.entregado-info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entregado-info h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #0066B3;
+}
+
+.entregado-info p {
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.entregado-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.entregado-info li {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .entregado-card {
+        grid-template-columns: 1fr;
+    }
+
+    .entregado-card img {
+        height: 240px;
+    }
+
+    .entregado-info {
+        padding: 30px;
+    }
+
+    .entregados-hero h1 {
+        font-size: 32px;
+    }
+
+    .entregados-hero p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .entregados-hero {
+        padding: 70px 20px;
+    }
+
+    .entregado-info h3 {
+        font-size: 22px;
+    }
+}
+

@@ -1,0 +1,185 @@
+/* ================= FOOTER ================= */
+
+.footer{
+    width:100%;
+    background:#f9f9f9;
+    border-top:1px solid #ddd;
+    padding:60px 40px 30px;
+    font-family:"Inter", system-ui, sans-serif;
+}
+
+/* GRID PRINCIPAL */
+.footer-top{
+    max-width:1400px;
+    margin:0 auto 40px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:60px;
+}
+
+/* COLUMNAS */
+.footer-col{
+    padding:10px;
+    border-radius:10px;
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.footer-col:hover{
+    transform:translateY(-6px);
+    
+}
+
+.footer-col h4{
+    font-size:0.95rem;
+    font-weight:700;
+    color:#003c70;
+    margin-bottom:16px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+/* LINKS GENERALES */
+.footer a{
+    color:#005aa0;
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:color .25s ease, transform .25s ease;
+}
+
+.footer a:hover{
+    color:#003c70;
+    transform:translateX(3px);
+}
+
+/* CONTACTO */
+.footer-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.footer-link svg{
+    width:18px;
+    height:18px;
+    fill:#005aa0;
+}
+
+/* OFICINAS */
+.footer-col p{
+    font-size:0.95rem;
+    color:#444;
+    line-height:1.6;
+    margin-bottom:10px;
+}
+
+/* MAPA */
+.footer-map{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    color:#0066B3;
+    text-decoration:none;
+    line-height:1.5;
+    margin-bottom:10px;
+}
+
+.footer-map:hover{
+    color:#004f87;
+}
+
+/* HORARIO */
+.footer-horario{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    margin-top:6px;
+}
+
+.footer-ico{
+    width:18px;
+    height:18px;
+    flex:0 0 18px;
+    margin-top:2px;
+}
+
+.footer-ico svg{
+    width:100%;
+    height:100%;
+    fill:#0066B3;
+}
+
+.footer-text{
+    color:#333;
+}
+
+.footer-map .footer-text{
+    color:inherit;
+}
+
+/* LISTAS (MENÚ / DESARROLLOS) */
+.footer-col ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-col li{
+    margin-bottom:8px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+    border-top:1px solid #ddd;
+    padding-top:20px;
+    text-align:center;
+    font-size:0.85rem;
+    color:#666;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+    .footer-top{
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+}
+
+@media(max-width:600px){
+    .footer{
+        padding:40px 20px 20px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:30px;
+        text-align:center;
+    }
+
+    .footer-link,
+    .footer-map,
+    .footer-horario{
+        justify-content:center;
+    }
+}
+
+.footer a{
+    transition: color .25s ease, transform .25s ease;
+}
+
+.footer a:hover{
+    color:#003c70;
+    transform: translateX(3px);
+}
+
+/* ================= EFECTO HOVER MENU Y DESARROLLOS ================= */
+
+.footer-col ul li a{
+    display:inline-block; /* CLAVE para que se mueva */
+    transition: color .25s ease, transform .25s ease;
+}
+
+.footer-col ul li a:hover{
+    color:#003c70;
+    transform: translateX(3px);
+}

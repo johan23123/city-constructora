@@ -1,0 +1,90 @@
+/* =====================================================
+   COLLAGE SIN ESPACIOS
+   2 IMÁGENES POR FILA
+   ANIMACIÓN TIPO "TIPOS DE OBRA"
+===================================================== */
+
+.obra-collage-wrapper{
+    background:#f4f6f8;
+    padding:0;
+}
+
+.obra-collage{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-auto-rows:320px;
+    gap:0;
+    width:100%;
+}
+
+/* CONTENEDOR PARA ZOOM INTERNO */
+.img-box{
+    width:100%;
+    height:100%;
+    overflow:hidden;   /* CLAVE */
+}
+
+/* IMÁGENES */
+.img-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+
+    /* ANIMACIÓN QUE PEDISTE */
+    transition: transform .4s ease, filter .4s ease;
+}
+
+/* HOVER — MISMA QUE "TIPOS DE OBRA" */
+.img-box:hover img{
+    transform:scale(1.10);
+    filter:brightness(1.07);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+    .obra-collage{
+        grid-template-columns:1fr;
+        grid-auto-rows:260px;
+    }
+}
+
+@media (max-width: 500px){
+    .obra-collage{
+        grid-auto-rows:220px;
+    }
+}
+
+
+/* ================= TÍTULO SOBRE COLLAGE ================= */
+
+.obra-collage-wrapper{
+    position:relative; /* CLAVE */
+}
+
+/* ================= TÍTULO SOBRE COLLAGE ================= */
+
+.obra-collage-wrapper{
+    position:relative;
+}
+
+.obra-titulo{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    font-family:'Montserrat', sans-serif;
+    font-size:clamp(26px, 5vw, 44px);
+    font-weight:600;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+
+    color:#ffffff;
+    text-shadow:0 6px 18px rgba(0,0,0,0.45);
+
+    z-index:10;
+    pointer-events:none;
+    text-align:center;
+    white-space:nowrap;
+}

@@ -1,0 +1,197 @@
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= BASE ================= */
+html, body{
+    height:100%;
+}
+
+body{
+    font-family:"Inter", system-ui, sans-serif;
+    background:#ffffff;
+    color:#222;
+}
+
+/* ================= MAIN ================= */
+/* 🔴 FORZADO: ocupa toda la pantalla */
+.main-collage{
+    min-height:100vh;        /* CLAVE DEL RELLENO */
+    width:100%;
+    display:flex;
+}
+
+/* ================= COLLAGE ================= */
+/* 🔴 FORZADO: el grid se estira */
+.collage{
+    width:100%;
+    min-height:100vh;        /* CLAVE DEL RELLENO */
+
+    display:grid;
+    grid-template-columns:2fr 2fr 1.6fr;
+
+    /* 🔴 LA MAGIA: la segunda fila se estira */
+    grid-template-rows:
+        clamp(360px, 45vh, 760px)
+        1fr;
+
+    grid-template-areas:
+        "hero hero hero"
+        "left center right";
+}
+
+/* ================= HERO ================= */
+.c-hero{
+    grid-area:hero;
+    position:relative;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    overflow:hidden;
+}
+
+.c-hero-img{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+}
+
+.c-hero-left{
+    background-image:url("../img/obra4.jpg");
+}
+
+.c-hero-right{
+    background-image:url("../img/obra5.jpg");
+}
+
+.c-hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.65)
+    );
+}
+
+.c-hero-text{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    color:#fff;
+    z-index:2;
+}
+
+/* ================= BLOQUES ================= */
+.c-left,
+.c-center,
+.c-right{
+    overflow:hidden;
+}
+
+/* IZQUIERDA */
+.c-left{
+    grid-area:left;
+    background:#0066B3;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+/* CENTRO */
+.c-center{
+    grid-area:center;
+    background:url("../img/obra6.jpg") center/cover no-repeat;
+}
+
+/* DERECHA */
+.c-right{
+    grid-area:right;
+    background:#0066B3;
+    color:#fff;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.c-left h3{
+    margin-bottom: 16px;   /* separación vertical */
+    line-height: 1.4;
+}
+
+/* LISTA DE RUBROS */
+.rubros{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ITEM */
+.rubros li{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fff; /* texto blanco */
+}
+
+/* ICONO SVG */
+.rubros .icon{
+    width: 22px;
+    height: 22px;
+    fill: #fff;          /* BLANCO */
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+
+
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+    .collage{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:
+            clamp(360px, 45vh, 760px)
+            1fr
+            auto;
+
+        grid-template-areas:
+            "hero hero"
+            "left center"
+            "right right";
+    }
+}
+
+@media(max-width:700px){
+    .collage{
+        grid-template-columns:1fr;
+        grid-template-rows:
+            clamp(320px, 50vh, 600px)
+            auto
+            1fr
+            auto;
+
+        grid-template-areas:
+            "hero"
+            "left"
+            "center"
+            "right";
+    }
+}
+

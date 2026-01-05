@@ -1,0 +1,265 @@
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= BASE ================= */
+html, body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:"Inter", system-ui, sans-serif;
+    background:#f5f5f5;
+    color:#222;
+
+    /* CLAVE: layout correcto */
+    display:flex;
+    flex-direction:column;
+}
+
+/* Empuja el footer sin deformar */
+.page-content{
+    flex:1;
+    width:100%;
+}
+
+/* ================= HISTORIA ================= */
+.historia-section{
+    max-width:1400px;
+    margin:90px auto;
+    padding:0 60px;
+}
+
+.historia-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:80px;
+   align-items:start;
+   align-items:center;
+}
+
+
+
+/* TEXTO */
+.historia-texto h2{
+    font-size:2.2rem;
+    margin-bottom:18px;
+    color:#003c70;
+}
+
+.historia-texto p{
+    font-size:1.05rem;
+    line-height:1.8;
+    margin-bottom:28px;
+    color:#444;
+}
+
+/* PUNTOS */
+.historia-puntos{
+    display:grid;
+    gap:18px;
+}
+
+.punto{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 22px;
+    background:#f7f9fb;
+    border-radius:10px;
+    font-size:1rem;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.punto svg{
+    width:50px;
+    height:50px;
+    fill:#0066b3;
+    flex-shrink:0;
+}
+
+/* VIDEO */
+.historia-video iframe{
+    width:100%;
+    min-height:380px;
+    border-radius:14px;
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
+}
+
+/* ================= TARJETAS ================= */
+.nosotros-cards{
+    max-width:1200px;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.card{
+    padding:40px;
+    text-align:center;
+    border-right:1px solid #eee;
+}
+
+.card:last-child{
+    border-right:none;
+}
+
+.card svg{
+    width:42px;
+    height:42px;
+    margin-bottom:14px;
+    fill:#0066b3;
+}
+
+.card h3{
+    font-size:1.25rem;
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:0.95rem;
+    color:#555;
+}
+
+/* ================= VALORES ================= */
+.valores-bloque{
+    background:#004f87;
+    color:#fff;
+    padding:90px 0;
+
+    display:flex;
+    justify-content:center;
+    gap:120px;
+    text-align:center;
+}
+
+.valor-item{
+    width:240px;
+}
+
+.valor-item svg{
+    width:52px;
+    height:52px;
+    margin-bottom:18px;
+    fill:#fff;
+}
+
+.valor-item h3{
+    font-size:1.2rem;
+    margin-bottom:6px;
+}
+
+.valor-item p{
+    font-size:0.95rem;
+    opacity:.95;
+}
+
+/* ================= OFERTA ================= */
+.oferta-bloque{
+    width:100%;
+    background:#f5f5f5;
+    padding:90px 0;
+}
+
+.oferta-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 40px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:60px;
+}
+
+.oferta-item{
+    text-align:center;
+}
+
+.oferta-icon{
+    width:64px;
+    height:64px;
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#004f87;
+    border-radius:50%;
+}
+
+.oferta-icon svg{
+    width:34px;
+    height:34px;
+    fill:#fff;
+}
+
+.oferta-item h3{
+    font-size:1.3rem;
+    color:#003c70;
+    margin-bottom:12px;
+}
+
+.oferta-item p{
+    font-size:1rem;
+    line-height:1.7;
+    color:#444;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+
+    .historia-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .historia-video iframe{
+        min-height:260px;
+    }
+
+    .nosotros-cards{
+        grid-template-columns:1fr;
+    }
+
+    .valores-bloque{
+        flex-direction:column;
+        gap:40px;
+        padding:60px 0;
+    }
+
+    .oferta-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+}
+/* ================= HERO HEADER ================= */
+
+.hero-header{
+    width:100%;
+    aspect-ratio: 16 / 6;   /* controla altura real */
+    overflow:hidden;
+}
+
+.hero-header img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .hero-header{
+        aspect-ratio:16 / 9;
+    }
+}

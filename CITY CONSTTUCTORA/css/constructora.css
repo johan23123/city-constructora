@@ -1,0 +1,188 @@
+/* ==========================================================
+   RESET GLOBAL
+========================================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:#f4f6f8;
+    font-family:"Inter", system-ui, sans-serif;
+    color:#222;
+}
+
+/* ==========================================================
+   INTRO CONSTRUCTORA
+========================================================== */
+.intro-constructora{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    padding:80px 8%;
+    background:#fff;
+    align-items:center;
+}
+
+.intro-text h2{
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.intro-text h2 span{
+    color:#0066B3;
+}
+
+.intro-text p{
+    font-size:1.05rem;
+    line-height:1.6;
+    color:#444;
+    margin-bottom:14px;
+}
+
+.intro-img img{
+    width:100%;
+    max-width:520px;
+    display:block;
+    margin-left:auto;
+}
+
+/* ==========================================================
+   BLOQUE COLLAGE (ESTILO REFERENCIA)
+========================================================== */
+.bloque-collage{
+    display:grid;
+    grid-template-columns:1.2fr 2fr;
+    gap:40px;               /* espacio entre columnas */
+    padding:80px 8%;        /* espacio externo */
+    align-items:start;
+    background:#fff;        /* fondo blanco como referencia */
+}
+
+/* ================= IZQUIERDA ================= */
+.bloque-texto{
+    padding-right:20px;
+}
+
+.bloque-texto h3{
+    font-size:26px;
+    margin-bottom:24px;
+    color:#001f48;
+}
+
+.bloque-texto ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.bloque-texto li{
+    position:relative;
+    padding-left:18px;
+    margin-bottom:12px;
+    font-size:15px;
+    line-height:1.5;
+    color:#444;
+}
+
+.bloque-texto li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    top:4px;
+    color:#0066B3;
+}
+
+/* ================= DERECHA — IMÁGENES ================= */
+.bloque-imagenes{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:16px;
+}
+
+.bloque-imagenes .img{
+    overflow:hidden;
+    position:relative;
+}
+
+.bloque-imagenes img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .4s ease;
+}
+
+.bloque-imagenes img:hover{
+    transform:scale(1.08);
+}
+
+/* imagen grande */
+.img-grande{
+    grid-row:1 / span 2;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media(max-width:1000px){
+
+    .intro-constructora{
+        grid-template-columns:1fr;
+        gap:40px;
+        padding:60px 6%;
+    }
+
+    .bloque-collage{
+        grid-template-columns:1fr;
+        padding:60px 6%;
+        gap:30px;
+    }
+
+    .bloque-imagenes{
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+    }
+
+    .img-grande{
+        grid-row:auto;
+    }
+}
+
+@media(max-width:600px){
+    .bloque-texto h3{
+        font-size:22px;
+    }
+
+    .bloque-texto li{
+        font-size:14px;
+    }
+}
+/* ================= HERO HEADER ================= */
+
+.hero-header{
+    width:100%;
+    aspect-ratio: 16 / 6;   /* controla altura real */
+    overflow:hidden;
+}
+
+.hero-header img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .hero-header{
+        aspect-ratio:16 / 9;
+    }
+}
